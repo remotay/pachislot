@@ -21,7 +21,7 @@ SERIAL_PORT = "COM3"
 BAUD_RATE = 115200
 INACTIVITY_TIMEOUT_SECONDS = 60
 COMMAND_COOLDOWN_SECONDS = 2
-STREAM_PUBLIC_BASE_URL = "http://174.68.134.45:8889"
+STREAM_PUBLIC_BASE_URL = "http://192.168.1.23:8889"
 STREAM_NAME = "pachislot"
 OBS_WS_HOST = "127.0.0.1"
 OBS_WS_PORT = 4455
@@ -34,7 +34,7 @@ The browser-facing video iframe uses:
 {STREAM_PUBLIC_BASE_URL}/{STREAM_NAME}?controls=false&muted=false&autoplay=true&playsInline=true
 ```
 
-If your public IP changes, edit `STREAM_PUBLIC_BASE_URL` near the top of `app.py`, then restart the server.
+If your LAN or public stream address changes, edit `STREAM_PUBLIC_BASE_URL` near the top of `app.py`, then restart the server.
 
 On hosted environments, you can set these as environment variables instead of editing code.
 
@@ -108,7 +108,7 @@ Manual Render setup:
    - Build Command: `pip install -r requirements.txt`
    - Start Command: `uvicorn app:app --host 0.0.0.0 --port $PORT`
 5. Add or edit environment variables:
-   - `STREAM_PUBLIC_BASE_URL=http://174.68.134.45:8889`
+   - `STREAM_PUBLIC_BASE_URL=http://192.168.1.23:8889`
    - `STREAM_NAME=pachislot`
 
-If your public stream IP changes later, update `STREAM_PUBLIC_BASE_URL` in the Render service environment variables, then redeploy.
+If your public or LAN stream address changes later, update `STREAM_PUBLIC_BASE_URL` in the Render service environment variables, then redeploy.
