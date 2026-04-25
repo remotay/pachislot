@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pachislot Controller</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar">
+        <div>
+          <h1>Pachislot Controller</h1>
+          <p id="connection-status">Connecting...</p>
+        </div>
+        <div class="session-actions">
+          <button id="take-control" class="primary">Take Control</button>
+          <button id="quit-control" class="secondary" disabled>Quit</button>
+        </div>
+      </section>
+
+      <section class="status-panel" aria-live="polite">
+        <div>
+          <span class="label">Control</span>
+          <strong id="control-status">Available</strong>
+        </div>
+        <div>
+          <span class="label">Timeout</span>
+          <strong id="timeout-status">--</strong>
+        </div>
+        <div>
+          <span class="label">Serial</span>
+          <strong id="serial-status">Checking COM3</strong>
+        </div>
+        <div>
+          <span class="label">OBS</span>
+          <strong id="obs-status">Checking OBS</strong>
+        </div>
+      </section>
+
+      <section class="video-panel" aria-label="Live video">
+        <div class="video-header">
+          <h2>Live Video</h2>
+          <span id="video-status">Available</span>
+        </div>
+        <div id="video-frame-host" class="video-frame-host"></div>
+      </section>
+
+      <section class="controls" aria-label="Pachislot controls">
+        <button class="control-button lever" data-command="a" disabled>
+          <span class="key">A</span>
+          <span class="name">Lever</span>
+        </button>
+
+        <div class="stop-row">
+          <button class="control-button" data-command="s" disabled>
+            <span class="key">S</span>
+            <span class="name">Left Stop</span>
+          </button>
+          <button class="control-button" data-command="d" disabled>
+            <span class="key">D</span>
+            <span class="name">Middle Stop</span>
+          </button>
+          <button class="control-button" data-command="f" disabled>
+            <span class="key">F</span>
+            <span class="name">Right Stop</span>
+          </button>
+        </div>
+
+        <button class="control-button maxbet" data-command="g" disabled>
+          <span class="key">G</span>
+          <span class="name">Max Bet</span>
+        </button>
+      </section>
+
+      <section class="event-log" aria-label="Event log">
+        <h2>Live Events</h2>
+        <ol id="events"></ol>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
